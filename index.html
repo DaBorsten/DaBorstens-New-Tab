@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New Tab Page von DaBorsten">
+    <title>DaBorstens New Tab</title>
+    <meta name="theme-color" content="#132829">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+    <script src="/js/loadShortcuts.js" defer></script>
+    <script src="/js/settings.js" defer></script>
+    <script src="/js/loadSettings.js" defer></script>
+
+    <!-- Script to add Shortcuts and open/close Popup for new Website -->
+    <script src="/js/addShortcut.js" defer></script>
+
+    <!-- Muss immer als letztes stehen -->
+    <script src="/js/eventListeners.js" defer></script>
+</head>
+
+<body>
+    <!-- CSS Grid Container -->
+    <div class="grid" id="speedDials">
+        <!-- Add Button for new Website shortcut-->
+        <button id="add">+</button>
+    </div>
+
+    <!-- System Panel bottom right -->
+    <div id="systemPanelRight">
+        <div>
+            <button class="buttonWithText btn-settings" id="btn-settings-id">Settings</button>
+        </div>
+
+        <a href="chrome://bookmarks" class="systemButtons" id="bookmarks">
+            <span class="material-symbols-rounded">bookmarks</span>
+        </a>
+
+        <a href="chrome://downloads" class="systemButtons">
+            <span class="material-symbols-rounded">download</span>
+        </a>
+
+        <a href="chrome://history" class="systemButtons">
+            <span class="material-symbols-rounded">history</span>
+        </a>
+    </div>
+
+
+    <!--------------------------------------
+        Popups
+    --------------------------------------->
+
+    <!-- New Website Popup-->
+    <div id="newWebsite" class="menus">
+        <div id="newWebsiteTop">
+            <h2>Webseite bearbeiten:</h2>
+
+            <button id="close">
+                <span class="material-symbols-rounded" id="closeSpan">
+                    close
+                </span>
+            </button>
+        </div>
+
+        <div>
+            <label for="websiteName" class="inputLabels">Name</label>
+        </div>
+        <div>
+            <input type="text" class="inputs" id="websiteName" placeholder="Website-Titel" size="50" value="">
+        </div>
+
+        <div>
+            <label for="websiteUrl" class="inputLabels">URL</label>
+        </div>
+        <div>
+            <input type="url" class="inputs" id="websiteUrl" placeholder="Websiteadresse" size="50" value="">
+        </div>
+
+        <div class="newWebsiteButtons">
+            <div>
+                <button class="buttonWithText newWebsiteButton" id="cancel">Abbrechen</button>
+            </div>
+
+            <div>
+                <button class="buttonWithText newWebsiteButton" id="save">Speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Menu Popup -->
+    <div id="settings" class="menus">
+        <div id="sidebarAndContent">
+            <div class="tabs">
+                <div data-tab-target="#backgroundImageTab" class="active tab" id="backgroundImage">
+                    <a class="sidebarLinks">Hintergrund</a>
+                </div>
+                <div data-tab-target="#shortcutsTab" class="tab" id="shortcuts">
+                    <a class="sidebarLinks">Verknüpfungen</a>
+                </div>
+                <div data-tab-target="#designTab" class="tab" id="design">
+                    <a class="sidebarLinks">Design</a>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <div id="backgroundImageTab" data-tab-content class="active">
+                    <div id="settingsContentHeading">
+                        <p>Hintergrundbild anzeigen</p>
+                        <input type="checkbox" name="backgroundImage" class="checkbox" id="backgroundImageCheckbox">
+                    </div>
+                    <div id="settingsContent">
+                        <input type="file" name="backgroundImageUpload" id="backgroundImageUpload" accept="image/*">
+                    </div>
+                </div>
+
+                <div id="shortcutsTab" data-tab-content>
+                    <div id="settingsContentHeading">
+                        <p>Shortcuts anzeigen</p>
+                        <input type="checkbox" name="backgroundImage" class="checkbox" id="backgroundImageCheckbox">
+                    </div>
+                    <div id="settingsContent">
+                        <input type="file" name="backgroundImageUpload" id="backgroundImageUpload" accept="image/*">
+                    </div>
+                </div>
+
+                <div id="designTab" data-tab-content>
+                    <div id="settingsContentHeading">
+                        <p>Design anzeigen</p>
+                        <input type="checkbox" name="backgroundImage" class="checkbox" id="backgroundImageCheckbox">
+                    </div>
+                    <div id="settingsContent">
+                        <input type="file" name="backgroundImageUpload" id="backgroundImageUpload" accept="image/*">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settingsButtons">
+            <div>
+                <button class="buttonWithText settingsButton" id="cancelSettingsButton">Abbrechen</button>
+            </div>
+
+            <div>
+                <button class="buttonWithText settingsButton" id="saveSettingsButton">Speichern</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

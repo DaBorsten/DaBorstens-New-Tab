@@ -1,0 +1,406 @@
+:root {
+  /* Buttons Background-color */
+  --buttonDefaultColor: rgb(255, 255, 255);
+  --buttonHoverColor: rgb(144, 238, 144);
+  --buttonActiveColor: rgb(90, 148, 90);
+
+  /* Buttons Font-color */
+  --buttonFontColor: rgb(47, 79, 79);
+  --buttonHoverFontColor: rgb(0, 0, 0);
+  --buttonActiveFontColor: rgb(0, 0, 0);
+
+  /* Popup Windows Background-color */
+  --popupsColor: rgb(47, 79, 79);
+  --popupsColorHover: rgb(40, 66, 66);
+  --popupsColorActive: rgb(30, 49, 49);
+}
+
+body,
+html {
+  margin: 0;
+  background-color: rgba(17, 32, 32, 0.877);
+
+  height: 100vh;
+
+  /* Center and scale the image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Default button */
+
+.buttonWithText {
+  border: none;
+  border-radius: 24px;
+  background: var(--buttonDefaultColor);
+  padding: 10px 20px;
+  font-size: medium;
+  font-weight: bold;
+  color: var(--buttonFontColor);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.buttonWithText:hover {
+  background: var(--buttonHoverColor);
+  color: var(--buttonHoverFontColor);
+}
+
+.buttonWithText:active {
+  background: var(--buttonActiveColor);
+  color: var(--buttonActiveFontColor);
+  transform: scale(0.95);
+}
+
+/* Webdials
+--------------------------------------------*/
+
+.grid {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 70vw;
+  max-width: 90vw;
+  min-height: 120px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  transform: translate(-50%);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 16px;
+  justify-items: center;
+
+  padding: 16px;
+}
+
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.shortcutImageClass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  aspect-ratio: 1;
+
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+
+}
+
+.favIcons {
+  width: 75%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 1rem;
+}
+
+.shortcutNameClass {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+/* Add-Button */
+
+#add {
+  padding: 16px;
+  width: 100px;
+  aspect-ratio: 1;
+
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  border: none;
+
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+#add:hover {
+  background: rgba(33, 102, 54, 0.2);
+}
+
+#add:active {
+  transform: scale(0.95);
+}
+
+
+/* Panel on the bottom right corner
+--------------------------------------------*/
+
+#systemPanelRight {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  bottom: 30px;
+  right: 30px;
+}
+
+.btn-settings {
+  padding-inline: 20px;
+  height: 100%;
+}
+
+.systemButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  aspect-ratio: 1;
+  padding: 10px;
+
+  border: none;
+  border-radius: 24px;
+  background-color: var(--buttonDefaultColor);
+  color: var(--buttonFontColor);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.systemButtons:hover {
+  background: var(--buttonHoverColor);
+  color: var(--buttonHoverFontColor)
+}
+
+.systemButtons:active {
+  background: var(--buttonActiveColor);
+  color: var(--buttonActiveFontColor);
+  transform: scale(0.95);
+}
+
+
+
+/*--------------------------------------------
+ Popups
+--------------------------------------------*/
+
+/* New Website Popup
+--------------------------------------------*/
+
+#newWebsite {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  flex-direction: column;
+
+  max-width: 70vw;
+
+  width: -webkit-max-content;
+
+  width: -moz-max-content;
+
+  width: max-content;
+
+  background-color: var(--popupsColor);
+  border-radius: 10px;
+
+  color: white;
+}
+
+.inputLabels {
+  font-size: medium;
+  font-weight: 600;
+  line-height: 3;
+}
+
+.inputs {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-size: medium;
+  border: none;
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+}
+
+.newWebsiteButtons {
+  display: flex;
+  justify-content: right;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+#newWebsiteTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: -webkit-fit-content;
+
+  height: -moz-fit-content;
+
+  height: fit-content;
+  aspect-ratio: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 100%;
+  background: none;
+  color: white;
+
+  cursor: pointer;
+
+}
+
+/* Settings Popup
+--------------------------------------------*/
+
+#settings {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  padding-left: 0;
+  flex-direction: column;
+
+  width: 700px;
+  max-width: 70vw;
+  height: 400px;
+
+  background-color: var(--popupsColor);
+  border-radius: 10px;
+}
+
+/* Buttons in settings menu bottom right */
+
+.settingsButtons {
+  display: flex;
+  justify-content: right;
+  align-self: flex-end;
+  gap: 20px;
+}
+
+/* Sidebar and content */
+
+#sidebarAndContent {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+/* Sidebar on the left */
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.tab {
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  background-color: var(--popupsColor);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: var(--popupsColorHover);
+}
+
+.tab.active {
+  background-color: var(--popupsColorActive);
+}
+
+.sidebarLinks {
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 600;
+  line-height: 3;
+  color: white;
+  user-select: none;
+}
+
+/* Content in settings menu */
+
+.tab-content {
+  width: 100%;
+  height: auto;
+  margin-left: 20px;
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+#settingsContentHeading {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+
+  font-size: medium;
+  font-weight: 600;
+  color: white;
+  user-select: none;
+}
+
+#settingsContent {
+  width: 100%;
+  height: 100%;
+}
